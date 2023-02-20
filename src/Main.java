@@ -6,7 +6,14 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args)
     {
-        LånerMapper lånerMapper = new LånerMapper();
-        ArrayList<Låner> lånerList = lånerMapper.getLånerList();
+
+        ArrayList<Låner> lånerList = LånerMapper.getLånerList();
+
+        for (Låner låner : lånerList) {
+
+            System.out.println(låner.toString());
+
+        }
+
     }
 }

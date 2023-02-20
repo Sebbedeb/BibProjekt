@@ -8,20 +8,24 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-public class LånerMapper {
+public class LånerMapper
+{
 
 
-    public ArrayList<Låner> getLånerList() {
+    public static ArrayList<Låner> getLånerList()
+    {
 
         ArrayList<Låner> lånerList = new ArrayList<>();
 
-        try {
+        try
+        {
             Connection connection = ConnectionConfiguration.getConnection();
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM bibliotekonsdag.låner");
 
             ResultSet result = statement.executeQuery();
 
-            while (result.next()) {
+            while (result.next())
+            {
                 int id = result.getInt("idLåner");
                 String navn = result.getString("navn");
                 String adresse = result.getString("adresse");
@@ -30,13 +34,10 @@ public class LånerMapper {
                 Låner låner = new Låner(id, navn, adresse, postnr);
                 lånerList.add(låner);
             }
-
-        } catch (Exception e) {
-            e.printStackTrace();
         }
-
-        for (Låner låner : lånerList) {
-            System.out.println(låner.toString());
+        catch (Exception e)
+        {
+            e.printStackTrace();
         }
         return lånerList;
     }

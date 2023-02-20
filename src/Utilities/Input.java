@@ -19,13 +19,16 @@ public class Input
         int res = 0;
 
 
-        while (true) {
-            try {
+        while (true)
+        {
+            try
+            {
                 res = Integer.parseInt(getString(s));
                 return res;
 
 
-            } catch (Exception e) {
+            } catch (Exception e)
+            {
                 System.out.println("husk ikke tal ord");
             }
         }
