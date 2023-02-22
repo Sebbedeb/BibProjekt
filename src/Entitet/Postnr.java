@@ -24,4 +24,12 @@ public class Postnr {
     public void setBynavn(String bynavn) {
         this.bynavn = bynavn;
     }
+
+    @Override
+    public String toString() {
+        return "Postnr{" +
+                "postnr=" + postnr +
+                ", bynavn='" + bynavn + '\'' +
+                '}';
+    }
 }

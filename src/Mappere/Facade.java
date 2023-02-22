@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Facade
 {
-    public ArrayList<Låner> getLåners()
+    public ArrayList<Låner> getLånerList()
     {
         return LånerMapper.getLånerList();
     }

@@ -32,4 +32,13 @@ public class Udlån {
     public void setIdLåner(int idLåner) {
         this.idLåner = idLåner;
     }
+
+    @Override
+    public String toString() {
+        return "Udlån{" +
+                "idUdlån=" + idUdlån +
+                ", idBøger=" + idBøger +
+                ", idLåner=" + idLåner +
+                '}';
+    }
 }
