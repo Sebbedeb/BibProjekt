@@ -11,6 +11,12 @@ public class Låner {
         this.navn = navn;
         this.adresse = adresse;
     }
+    public Låner(String navn, String adresse, int postnr)
+    {
+        this.navn = navn;
+        this.adresse = adresse;
+        this.postnr = postnr;
+    }
 
     public int getIdLåner() {
         return idLåner;
