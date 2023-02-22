@@ -1,6 +1,7 @@
 import Entitet.Bøger;
 import Entitet.Låner;
 import Entitet.Postnr;
+import Entitet.Udlån;
 import Mappere.BøgerMapper;
 import Mappere.Facade;
 import Mappere.LånerMapper;
@@ -15,11 +16,12 @@ public class Main {
         ArrayList<Låner> lånerList = facade.getLånerList();
         ArrayList<Bøger> bøgerList = facade.getBøgerList();
         ArrayList<Postnr> postNrList = facade.getPostNrList();
+        ArrayList<Udlån> udlånsList = facade.getUdlånList();
+
         for(Bøger bøger : bøgerList)
         {
             System.out.println(bøger.toString());
         }
-
 
         for (Låner låner : lånerList) {
 
@@ -28,6 +30,10 @@ public class Main {
         for (Postnr postnr : postNrList) {
 
             System.out.println(postnr.toString());
+        }
+        for(Udlån udlån : udlånsList)
+        {
+            System.out.println(udlån.toString());
         }
 
 
