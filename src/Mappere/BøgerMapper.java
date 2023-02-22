@@ -2,11 +2,8 @@ package Mappere;
 
 import Database.ConnectionConfiguration;
 import Entitet.Bøger;
-import Entitet.Låner;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class BøgerMapper {
@@ -41,6 +38,44 @@ public class BøgerMapper {
         }
         return bøgerList;
     }
+    protected    Bøger opretBøger(Bøger bøger) throws SQLException
+    {
+
+
+        try {
+            Connection connection = ConnectionConfiguration.getConnection();
+
+            String sql = "INSERT  INTO bibliotekonsdag.Bøger (idBøger, titel, forfatter) VALUES (?,?,?)";
+
+//            PreparedStatement statement = connection.prepareStatement("INSERT  INTO manBib.Bøger (idBøger, titel, forfatter)" + "VALUES (?,?,?)");
+            PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
+            statement.setInt(1, bøger.getIdbøger());
+            statement.setString(2, bøger.getTitel());
+            statement.setString(3, bøger.getForfatter());
+
+
+            statement.executeUpdate();
+            ResultSet resultSet = statement.getGeneratedKeys();
+
+            resultSet.next();
+
+
+            bøger.setIdbøger(resultSet.getInt(1));
+
+
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
+
+        return bøger;
+
+
+    }
+
 
 
 }

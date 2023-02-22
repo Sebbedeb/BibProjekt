@@ -3,9 +3,7 @@ package Mappere;
 import Database.ConnectionConfiguration;
 import Entitet.Låner;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class LånerMapper
@@ -41,4 +39,42 @@ public class LånerMapper
         }
         return lånerList;
     }
+    protected Låner opretLåner(Låner låner) throws SQLException
+    {
+
+
+        try {
+            Connection connection = ConnectionConfiguration.getConnection();
+
+            String sql = "INSERT  INTO manBib.Bruger (navn, adresse, postnr) VALUES (?,?,?)";
+
+//            PreparedStatement statement = connection.prepareStatement("INSERT  INTO manBib.Bruger (navn, adresse, postnr)" + "VALUES (?,?,?)");
+            PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
+            statement.setString(1, låner.getNavn());
+            statement.setString(2, låner.getAdresse());
+            statement.setInt(3, låner.getPostnr());
+
+
+            statement.executeUpdate();
+            ResultSet resultSet = statement.getGeneratedKeys();
+
+            resultSet.next();
+
+
+            låner.setIdLåner(resultSet.getInt(1));
+
+
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
+
+        return låner;
+
+
+    }
+
 }
