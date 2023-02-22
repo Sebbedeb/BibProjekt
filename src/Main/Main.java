@@ -1,19 +1,14 @@
-import Entitet.Bøger;
-import Entitet.Låner;
-import Entitet.Postnr;
-import Entitet.Udlån;
+package Main;
+
 import Mappere.Facade;
-import Mappere.LånerMapper;
+import Utilities.IO;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
         Facade facade = new Facade();
         IO io = new IO();
-
-        facade.findLåner("Scooby");
 
         //io.dialogue("Skriv venligst dit navn");
 

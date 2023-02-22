@@ -70,21 +70,32 @@ public class LånerMapper
         return låner;
     }
 
-    protected void findLåner(String s)
+    protected Låner findLåner(String s)
     {
         try {
             Connection connection = ConnectionConfiguration.getConnection();
-            String sql = "SELECT * FROM bibliotekonsdag.låner WHERE navn LIKE ?";
+            String sql = "SELECT * FROM bibliotekonsdag.låner WHERE navn LIKE (?)";
 
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, s);
 
             statement.executeQuery();
 
+            ResultSet resultSet = statement.getResultSet();
+
+            int id = resultSet.getInt(1);
+            String navn = resultSet.getString(2);
+            String adresse = resultSet.getString(3);
+            int postnr = resultSet.getInt(4);
+            Låner låner = new Låner(id, navn, adresse, postnr);
+            return låner;
+
         } catch(SQLException e)
         {
+            System.out.println("kæmpe fejl her");
             e.printStackTrace();
         }
+        return null;
     }
 
 }
