@@ -2,8 +2,6 @@ package Mappere;
 
 import Database.ConnectionConfiguration;
 import Entitet.Bøger;
-import Entitet.Låner;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

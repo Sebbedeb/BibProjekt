@@ -2,11 +2,7 @@ import Entitet.Bøger;
 import Entitet.Låner;
 import Entitet.Postnr;
 import Entitet.Udlån;
-import Mappere.BøgerMapper;
 import Mappere.Facade;
-import Mappere.LånerMapper;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Main {
