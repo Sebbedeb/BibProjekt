@@ -12,7 +12,7 @@ public class LånerMapper
 {
 
 
-    public static ArrayList<Låner> getLånerList()
+    protected static ArrayList<Låner> getLånerList()
     {
 
         ArrayList<Låner> lånerList = new ArrayList<>();
