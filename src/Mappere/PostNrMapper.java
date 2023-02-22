@@ -16,7 +16,7 @@ public class PostNrMapper {
 
         try {
             Connection connection = ConnectionConfiguration.getConnection();
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM bibliotekonsdag.bøger");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM bibliotekonsdag.postnr");
 
             ResultSet result = statement.executeQuery();
 

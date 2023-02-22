@@ -18,6 +18,6 @@ public class Facade
     }
     public ArrayList<Postnr> getPostNrList()
     {
-        PostNrMapper.getPostNrList();
+        return PostNrMapper.getPostNrList();
     }
 }
