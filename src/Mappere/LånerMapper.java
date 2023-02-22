@@ -46,7 +46,7 @@ public class LånerMapper
         try {
             Connection connection = ConnectionConfiguration.getConnection();
 
-            String sql = "INSERT  INTO manBib.Bruger (navn, adresse, postnr) VALUES (?,?,?)";
+            String sql = "INSERT  INTO bibliotekonsdag.Låner (navn, adresse, postnr) VALUES (?,?,?)";
 
 //            PreparedStatement statement = connection.prepareStatement("INSERT  INTO manBib.Bruger (navn, adresse, postnr)" + "VALUES (?,?,?)");
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -64,17 +64,27 @@ public class LånerMapper
 
             låner.setIdLåner(resultSet.getInt(1));
 
-
-
         } catch (Exception e) {
-
             e.printStackTrace();
-
         }
-
         return låner;
+    }
 
+    protected void findLåner(String s)
+    {
+        try {
+            Connection connection = ConnectionConfiguration.getConnection();
+            String sql = "SELECT * FROM bibliotekonsdag.låner WHERE navn LIKE ?";
 
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, s);
+
+            statement.executeQuery();
+
+        } catch(SQLException e)
+        {
+            e.printStackTrace();
+        }
     }
 
 }
