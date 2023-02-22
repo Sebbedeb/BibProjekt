@@ -1,6 +1,7 @@
 import Entitet.Bøger;
 import Entitet.Låner;
 import Mappere.BøgerMapper;
+import Mappere.Facade;
 import Mappere.LånerMapper;
 
 import java.util.ArrayList;
@@ -8,9 +9,10 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args)
     {
-
-        ArrayList<Låner> lånerList = LånerMapper.getLånerList();
-        ArrayList<Bøger> bøgerList = BøgerMapper.getBøgerList();
+        Facade facade = new Facade();
+        facade.getLåners();
+        facade.getBøgerList();
+        facade.getPostNrList()
         for(Bøger bøger : bøgerList)
         {
             System.out.println(bøger);
