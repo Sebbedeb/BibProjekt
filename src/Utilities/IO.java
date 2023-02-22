@@ -1,9 +1,21 @@
 package Utilities;
 
+import Languages.Dialog;
+
 import java.util.Scanner;
 
 public class IO {
     Scanner scanner = new Scanner(System.in);
+    LanguageHandler lHandler = new LanguageHandler();
+
+    public void Velkomst()
+    {
+        Dialog dialog;
+        dialog = lHandler.vælgSprog();
+        dialog.hello();
+        dialog.welcome();
+        dialog.askAge();
+    }
 
 
 

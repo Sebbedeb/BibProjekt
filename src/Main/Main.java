@@ -1,16 +1,31 @@
 package Main;
 
+import Languages.Dansk;
+import Languages.Deutsch;
+import Languages.Dialog;
+import Languages.English;
 import Mappere.Facade;
 import Utilities.IO;
+import Utilities.Input;
+import Utilities.LanguageHandler;
 
 import java.sql.SQLException;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
         Facade facade = new Facade();
         IO io = new IO();
+        Dialog dialog;
 
-        //io.dialogue("Skriv venligst dit navn");
+        io.Velkomst();
+
+
+    }
+
+    //io.dialogue("Skriv venligst dit navn");
+
+
 
 
 
@@ -42,9 +57,5 @@ public class Main {
         {
             System.out.println(udlån.toString());
         }
-
  */
-
-
-    }
 }
