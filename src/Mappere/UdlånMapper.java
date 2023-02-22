@@ -1,7 +1,6 @@
 package Mappere;
 
 import Database.ConnectionConfiguration;
-import Entitet.Bøger;
 import Entitet.Udlån;
 
 import java.sql.Connection;

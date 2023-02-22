@@ -2,6 +2,9 @@ package Mappere;
 
 import Database.ConnectionConfiguration;
 import Entitet.Bøger;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import java.sql.*;
 import java.util.ArrayList;
