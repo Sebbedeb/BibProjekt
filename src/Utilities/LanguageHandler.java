@@ -1,7 +1,6 @@
 package Utilities;
 
 import Languages.Dansk;
-import Languages.Deutsch;
 import Languages.Dialog;
 import Languages.English;
 
@@ -17,8 +16,6 @@ public class LanguageHandler {
             if (dialog instanceof Dansk) {
                 dialog = new English();
             } else if (dialog instanceof English) {
-                dialog = new Deutsch();
-            } else if (dialog instanceof Deutsch) {
                 dialog = new Dansk();
             }
         }
@@ -28,8 +25,7 @@ public class LanguageHandler {
         String sprog;
         System.out.println("Vælg venligst sprog");
         System.out.println("Please choose a language");
-        System.out.println("Bitte wählen Sie eine Sprache");
-        System.out.println("1: Dansk\n2: English\n3: Deutsch");
+        System.out.println("1: Dansk\n2: English");
         sprog = scanner.next();
         Dialog dialog;
         dialog = new Dansk();
@@ -38,8 +34,6 @@ public class LanguageHandler {
                 return dialog = new Dansk();
             case "2":
                 return dialog = new English();
-            case "3":
-                return dialog = new Deutsch();
         }
         return dialog;
     }

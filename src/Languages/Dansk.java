@@ -13,13 +13,16 @@ public class Dansk extends Dialog{
     }
 
     @Override
-    public String askAge() {
-        return "Hvor gammel er du?";
+    public String askName()
+    {
+        return "Hvad er dit navn?";
     }
 
     @Override
-    public String printAge(String age) {
-        return "Du er "+age+" år gammel";
+    public String askOptions() {
+        return "Hvad vil du?\n" +
+                "1: Lån bog\n" +
+                "2: Se dine lån";
     }
 
     @Override

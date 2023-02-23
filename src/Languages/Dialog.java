@@ -6,9 +6,9 @@ public abstract class Dialog {
 
     public abstract String welcome();
 
-    public abstract String askAge();
+    public abstract String askOptions();
 
-    public abstract String printAge(String age);
+    public abstract String askName();
 
     public abstract String changeLanguage();
 

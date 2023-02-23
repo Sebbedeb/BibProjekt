@@ -13,13 +13,15 @@ public class English extends Dialog{
     }
 
     @Override
-    public String askAge() {
-        return "How old are you?";
+    public String askOptions() {
+        return "What do you wanna do?\n"+
+                "1: borrow a book?\n"+
+                "2: see your currently borrowed books";
     }
 
     @Override
-    public String printAge(String age) {
-        return "You are "+age+" years old";
+    public String askName() {
+        return "What is your id?";
     }
 
     @Override
