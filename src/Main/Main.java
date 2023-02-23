@@ -12,7 +12,7 @@ public class Main {
         IO io = new IO();
         Dialog dialog;
 
-        io.Velkomst();
+        io.flow();
 
 
 

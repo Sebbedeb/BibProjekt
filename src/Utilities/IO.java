@@ -1,22 +1,42 @@
 package Utilities;
 
+import Entitet.Låner;
 import Languages.Dialog;
+import Mappere.Facade;
 
 import java.util.Scanner;
 
 public class IO {
     Scanner scanner = new Scanner(System.in);
     LanguageHandler lHandler = new LanguageHandler();
+    Facade facade = new Facade();
 
-    public void Velkomst()
+    public void flow()
     {
         int i;
+        String s;
+        Låner låner;
         Dialog dialog;
         dialog = lHandler.vælgSprog();
         displayMessage(dialog.hello());
         displayMessage(dialog.welcome());
-        System.out.println(i = dialogueInt(dialog.askOptions()));
+        i = dialogueInt(dialog.askName());
+        låner = facade.findLåner(i);
+        i = dialogueInt(dialog.askOptions());
+
     }
+
+    public Låner findALåner(int i)
+    {
+        return facade.findLåner(i);
+    }
+
+    /*public void borrowABook()
+    {
+        facade.findBøger();
+    }
+
+     */
 
     public int chooseNumbers(int i)
     {
@@ -36,10 +56,11 @@ public class IO {
     }
 
 
-    public void displayMessage(String s)
+    public String displayMessage(String s)
     {
         System.out.println("**************");
         System.out.println(s);
+        return s;
     }
 
     public int readUserInputInt()

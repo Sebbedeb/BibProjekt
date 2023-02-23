@@ -36,8 +36,8 @@ public class Facade
         return postNrMapper.opretPostnr(p);
     }
 
-    public void findLåner (String s)
+    public Låner findLåner (int i)
     {
-        lånerMapper.findLåner(s);
+        return lånerMapper.findLåner(i);
     }
 }
